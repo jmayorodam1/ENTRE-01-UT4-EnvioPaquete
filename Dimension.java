@@ -45,8 +45,8 @@ public class Dimension
      * Devuelve una copia exacta al objeto actual
      */
     public Dimension obtenerCopia() {
-        //TODO
-        return null;
+        Dimension copia = new Dimension(this.alto,this.ancho,this.largo);
+        return copia;
 
     }
 
@@ -55,8 +55,8 @@ public class Dimension
      * (leer enunciado)
      */
     public String toString() {
-        //TODO
-        return null;
+        String str = String.format("Alto:\t %4.2f(cm)\nAncho \t %4.2f(cm)\nLargo: %4.2f(cm)",alto,ancho,largo);
+        return str;
 
     }
 

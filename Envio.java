@@ -134,8 +134,9 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-        //TODO
-        return null;
+        System.out.println("Nº de paquetes: " +  getNumeroPaquetes());
+        String str = paquete1.toString() + paquete2.toString() + paquete3.toString();
+        return str;
     }
 
     /**

@@ -56,13 +56,13 @@ public class Envio
      */
     public int getNumeroPaquetes() {
         int paquetes = 0;
-        if(paquete1 == null){
+        if(paquete1 != null){
             paquetes++;
         }
-        if(paquete2 == null){
+        if(paquete2 != null){
             paquetes++;
         }
-        if(paquete3 == null){
+        if(paquete3 != null){
             paquetes++;
         }
         return paquetes;
@@ -134,8 +134,21 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-        System.out.println("Nº de paquetes: " +  getNumeroPaquetes());
-        String str = paquete1.toString() + paquete2.toString() + paquete3.toString();
+        String str = "";
+        if(getNumeroPaquetes() == 1 ){
+             str = "\nNumero de paquetes = 1\n" + paquete1.toString() + "Coste total envio = " + calcularCosteTotalEnvio();
+        }
+        else if(getNumeroPaquetes() == 2){
+             str = "\nNumero de paquetes = 2\n" +paquete1.toString() + paquete2.toString() + "Coste total envio = " + calcularCosteTotalEnvio();
+        }
+        else if(getNumeroPaquetes() == 3){
+             str = "\nNumero de paquetes = 3\n" +paquete1.toString() + paquete2.toString() + paquete3.toString() + "Coste total envio = " + calcularCosteTotalEnvio();
+
+        }
+        else{
+         str = "No hay paquetes";
+        
+        }
         return str;
     }
 

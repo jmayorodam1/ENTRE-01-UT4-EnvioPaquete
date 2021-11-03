@@ -115,10 +115,9 @@ public class Paquete
      *  (leer enunciado)
      */
     public String toString() {
-        System.out.println("Descripcion del paquete"); 
-        String str = "";
+        String str = "Descripcion del paquete";
         str += String.format(dimension.toString());
-        str += String.format("Peso real:   %10,2f(kg)\nVolumen:  %10,2(cm3)\nPeso volumetrico:   %10,2f(kg)");
+        str += String.format("\nPeso real:   %10.2f(kg)\nVolumen:  %10.2f(cm3)\nPeso volumetrico:   %10.2f(kg)",peso,calcularVolumen(),calcularPesoVolumetrico());
        return str;
 
     }

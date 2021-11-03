@@ -27,7 +27,7 @@ public class TestEnvio
         envi.print();
 
         Paquete paquete3 = new Paquete(new Dimension(50,50,70),13);
-        envi.addPaquete(paquete1);
+        envi.addPaquete(paquete3);
         envi.print();
         envi.addPaquete(paquete2.obtenerCopia());
 

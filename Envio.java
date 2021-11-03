@@ -101,7 +101,7 @@ public class Envio
         }
         else{
         
-            System.out.println("No se admiten mas paqutes en el envio");        
+            System.out.println("\n-----------------------------------------\nNo se admiten mas paqutes en el envio");        
         }
 
     }
@@ -118,12 +118,23 @@ public class Envio
      */
     public double calcularCosteTotalEnvio() {
         double coste = 0;
-        double pesoFac1 = paquete1.calcularPesoFacturable();
-        double pesoFac2 = paquete2.calcularPesoFacturable();
-        double pesoFac3 = paquete3.calcularPesoFacturable();
+        double pesoFac1 = 0;
+        double pesoFac2 = 0;
+        double pesoFac3 = 0;
+        if(getNumeroPaquetes() == 1 ){
+             pesoFac1 = paquete1.calcularPesoFacturable();
+        }
+        else if(getNumeroPaquetes() == 2){
+            pesoFac1 = paquete1.calcularPesoFacturable();
+            pesoFac2 = paquete2.calcularPesoFacturable();
+        }
+        else if(getNumeroPaquetes() == 3){
+            pesoFac1 = paquete1.calcularPesoFacturable();
+            pesoFac2 = paquete2.calcularPesoFacturable();
+            pesoFac3 = paquete3.calcularPesoFacturable();
+        }
         double pesotot = pesoFac1 + pesoFac2 + pesoFac3;
-        coste = (Math.ceil(paquete1.getPeso() * PRECIO_KILO)) + (Math.ceil(paquete2.getPeso() * PRECIO_KILO)) + 
-        (Math.ceil(paquete3.getPeso() * PRECIO_KILO));
+        coste = (Math.ceil(pesotot * PRECIO_KILO));
         return coste;
 
     }
@@ -136,13 +147,13 @@ public class Envio
     public String toString() {
         String str = "";
         if(getNumeroPaquetes() == 1 ){
-             str = "\nNumero de paquetes = 1\n" + paquete1.toString() + "Coste total envio = " + calcularCosteTotalEnvio();
+             str = "\nNumero de paquetes = 1\n" + paquete1.toString() + "\nCoste total envio = " + calcularCosteTotalEnvio();
         }
         else if(getNumeroPaquetes() == 2){
-             str = "\nNumero de paquetes = 2\n" +paquete1.toString() + paquete2.toString() + "Coste total envio = " + calcularCosteTotalEnvio();
+             str = "\nNumero de paquetes = 2\n" +paquete1.toString() + paquete2.toString() + "\nCoste total envio = " + calcularCosteTotalEnvio();
         }
         else if(getNumeroPaquetes() == 3){
-             str = "\nNumero de paquetes = 3\n" +paquete1.toString() + paquete2.toString() + paquete3.toString() + "Coste total envio = " + calcularCosteTotalEnvio();
+             str = "\nNumero de paquetes = 3\n" +paquete1.toString() + paquete2.toString() + paquete3.toString() + "\nCoste total envio = " + calcularCosteTotalEnvio();
 
         }
         else{

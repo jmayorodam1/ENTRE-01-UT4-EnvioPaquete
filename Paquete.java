@@ -20,7 +20,7 @@ public class Paquete
     public Paquete()    {
 
         dimension = new Dimension(40,30,50);
-         peso = 8;
+        peso = 8;
 
     }
 
@@ -115,7 +115,7 @@ public class Paquete
      *  (leer enunciado)
      */
     public String toString() {
-        String str = "Descripcion del paquete";
+        String str = "\n\nDescripcion del paquete";
         str += String.format(dimension.toString());
         str += String.format("\nPeso real:   %10.2f(kg)\nVolumen:  %10.2f(cm3)\nPeso volumetrico:   %10.2f(kg)",peso,calcularVolumen(),calcularPesoVolumetrico());
        return str;

@@ -55,7 +55,7 @@ public class Dimension
      * (leer enunciado)
      */
     public String toString() {
-        String str = String.format("\nAlto:\t %4.2f(cm)\nAncho \t %4.2f(cm)\nLargo: %4.2f(cm)",alto,ancho,largo);
+        String str = String.format("\nAlto:\t %10.2f(cm)\nAncho: \t %10.2f(cm)\nLargo: %10.2f(cm)",alto,ancho,largo);
         return str;
 
     }

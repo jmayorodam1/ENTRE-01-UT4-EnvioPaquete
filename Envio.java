@@ -101,7 +101,7 @@ public class Envio
         }
         else{
         
-            System.out.println("\n-----------------------------------------\nNo se admiten mas paqutes en el envio");        
+            System.out.println("\nNo se admiten mas paqutes en el envio");        
         }
 
     }
@@ -133,8 +133,8 @@ public class Envio
             pesoFac2 = paquete2.calcularPesoFacturable();
             pesoFac3 = paquete3.calcularPesoFacturable();
         }
-        double pesotot = pesoFac1 + pesoFac2 + pesoFac3;
-        coste = (Math.ceil(pesotot * PRECIO_KILO));
+        double pesotot = Math.ceil(pesoFac1) + Math.ceil(pesoFac2) + Math.ceil(pesoFac3);
+        coste = pesotot *PRECIO_KILO;
         return coste;
 
     }
@@ -147,13 +147,16 @@ public class Envio
     public String toString() {
         String str = "";
         if(getNumeroPaquetes() == 1 ){
-             str = "\nNumero de paquetes = 1\n" + paquete1.toString() + "\nCoste total envio = " + calcularCosteTotalEnvio();
+             str = "\nNumero de paquetes = 1\n" + paquete1.toString() + "\nCoste total envio = " + 
+             calcularCosteTotalEnvio() + "€" + "\n-----------------------------------------";
         }
         else if(getNumeroPaquetes() == 2){
-             str = "\nNumero de paquetes = 2\n" +paquete1.toString() + paquete2.toString() + "\nCoste total envio = " + calcularCosteTotalEnvio();
+             str = "\nNumero de paquetes = 2\n" +paquete1.toString() + paquete2.toString() + "\nCoste total envio = "
+             + calcularCosteTotalEnvio() + "€" + "\n-----------------------------------------";
         }
         else if(getNumeroPaquetes() == 3){
-             str = "\nNumero de paquetes = 3\n" +paquete1.toString() + paquete2.toString() + paquete3.toString() + "\nCoste total envio = " + calcularCosteTotalEnvio();
+             str = "\nNumero de paquetes = 3\n" +paquete1.toString() + paquete2.toString() + paquete3.toString() + 
+             "\nCoste total envio = " + calcularCosteTotalEnvio() + "€" + "\n-----------------------------------------";
 
         }
         else{
